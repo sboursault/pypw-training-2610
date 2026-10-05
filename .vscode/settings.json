@@ -1,0 +1,16 @@
+{
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "always"
+        },
+    },
+    "python.analysis.typeCheckingMode": "standard",
+    "python.testing.pytestArgs": [
+        "tests", // path to the test folder
+        "--headed", // show browser window when running tests
+        "--pdb", // keeps the page open when a test fails (except in debug mode)
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+}
