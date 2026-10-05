@@ -9,7 +9,7 @@ def browser_context_args(browser_context_args: dict):
     """
     Override browser locale
     """
-    return {**browser_context_args, "locale": "fr-FR"}
+    return {**browser_context_args, "locale": "en-GB"}
 
 
 @pytest.fixture
