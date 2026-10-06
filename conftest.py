@@ -1,9 +1,21 @@
+import os
+
 import pytest
 from playwright.sync_api import APIRequestContext, Page, Playwright, expect
 
+from support.pom.home_page import HomePage
+from support.pom.login_page import LoginPage
 from support.pom.product_page import ProductPage
 
 # Playwrigth settings and base fixtures
+
+
+@pytest.fixture(scope="session")
+def base_url():
+    """
+    Override the --base-url option: base url comes from the env file
+    """
+    return os.environ["BASE_URL"]
 
 
 @pytest.fixture(scope="session")
@@ -46,3 +58,13 @@ def api_request(playwright: Playwright, base_url: str):
 @pytest.fixture
 def product_page(page: Page):
     return ProductPage(page)
+
+
+@pytest.fixture
+def home_page(page: Page):
+    return HomePage(page)
+
+
+@pytest.fixture
+def login_page(page: Page):
+    return LoginPage(page)
