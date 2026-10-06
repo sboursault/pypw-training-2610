@@ -6,6 +6,7 @@ from playwright.sync_api import APIRequestContext, Page, Playwright, expect
 from support.pom.home_page import HomePage
 from support.pom.login_page import LoginPage
 from support.pom.product_page import ProductPage
+from support.workflow import Workflow
 
 # Playwrigth settings and base fixtures
 
@@ -51,6 +52,12 @@ def api_request(playwright: Playwright, base_url: str):
 # Api fixtures
 
 # Workflow fixtures
+
+
+@pytest.fixture
+def workflow(login_page: LoginPage, home_page: HomePage):
+    return Workflow(login_page, home_page)
+
 
 # Page object fixtures
 
