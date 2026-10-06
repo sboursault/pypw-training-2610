@@ -55,8 +55,8 @@ def api_request(playwright: Playwright, base_url: str):
 
 
 @pytest.fixture
-def workflow(login_page: LoginPage, home_page: HomePage):
-    return Workflow(login_page, home_page)
+def workflow(login_page: LoginPage, home_page: HomePage, page: Page):
+    return Workflow(login_page, home_page, page)
 
 
 # Page object fixtures
